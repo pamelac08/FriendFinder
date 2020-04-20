@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey</title>
 
+    <!-- Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
+    
+    <!--jQuery, Bootstrap JS links  -->
     <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
@@ -13,13 +16,26 @@
     <style>
         #container {
         margin: 40px;
+        font-family: Arial, Helvetica, sans-serif;  
         }
         #survey-submit {
             margin-top: 10px;
+            width: 100%;
         }
         #match-photo {
             min-width: 300px;
+            max-width: 450px;
             min-height: 400px;
+            max-height: 600px;
+        }
+        select {
+            max-width: 33%;
+            margin-bottom: 15px;
+        }
+        #header {
+            text-align: center;
+            text-shadow: black 2px 2px;
+            font-size: 4rem;
         }
     </style>
 </head>
@@ -27,22 +43,22 @@
 <body>
 
     <div id="container">
-      <h2>Survey Questions</h2>
+      <h1 id="header">Survey Questions</h1>
         <hr/>
       <form id="name-form">
         <div class="form-group">
-          <label for="name">Name (required)</label> <br />
+          <label for="name"><h4>Name (required)</h4></label> <br />
           <input type="text" class="form-control" id="name" aria-describedby="emailHelp" required/>
         </div>
         <div class="form-group">
-          <label for="photo">Link to Photo (required)</label> <br/>
+          <label for="photo"><h4>Link to Photo (required)</h4></label> <br/>
           <input type="text" class="form-control" id="photo" required />
         </div>
       </form>
         <hr/>
 
       <h4>Question 1</h4>
-      <h6>this is the first question??</h6>
+      <h6>I like to take charge.</h6>
 
       <select class="form-control form-control-sm" id="q1">
         <option value="">Select your answer</option>
@@ -54,7 +70,7 @@
       </select>
 
       <h4>Question 2</h4>
-      <h5>this is the second question??</h5>
+      <h6>I like to solve complex problems.</h6>
 
       <select class="form-control form-control-sm" id="q2">
         <option value="">Select your answer</option>
@@ -66,7 +82,7 @@
       </select>
 
       <h4>Question 3</h4>
-      <h5>this is the first question??</h5>
+      <h6>I make friends easily.</h6>
 
       <select class="form-control form-control-sm" id="q3">
         <option value="">Select your answer</option>
@@ -78,7 +94,7 @@
       </select>
 
       <h4>Question 4</h4>
-      <h5>this is the first question??</h5>
+      <h6>I dislike being the center of attention.</h6>
 
       <select class="form-control form-control-sm" id="q4">
         <option value="">Select your answer</option>
@@ -90,7 +106,7 @@
       </select>
 
       <h4>Question 5</h4>
-      <h5>this is the first question??</h5>
+      <h6>I enjoy being spontaneous.</h6>
 
       <select class="form-control form-control-sm" id="q5">
         <option value="">Select your answer</option>
@@ -102,7 +118,7 @@
       </select>
 
       <h4>Question 6</h4>
-      <h5>this is the first question??</h5>
+      <h6>I generally believe others have good intentions.</h6>
 
       <select class="form-control form-control-sm" id="q6">
         <option value="">Select your answer</option>
@@ -114,7 +130,7 @@
       </select>
 
       <h4>Question 7</h4>
-      <h5>this is the first question??</h5>
+      <h6>I stick to the rules.</h6>
 
       <select class="form-control form-control-sm" id="q7">
         <option value="">Select your answer</option>
@@ -126,7 +142,7 @@
       </select>
 
       <h4>Question 8</h4>
-      <h5>this is the first question??</h5>
+      <h6>I usually avoid confrontations.</h6>
 
       <select class="form-control form-control-sm" id="q8">
         <option value="">Select your answer</option>
@@ -138,7 +154,7 @@
       </select>
 
       <h4>Question 9</h4>
-      <h5>this is the first question??</h5>
+      <h6>I prefer solitude most of the time.</h6>
 
       <select class="form-control form-control-sm" id="q9">
         <option value="">Select your answer</option>
@@ -150,7 +166,7 @@
       </select>
 
       <h4>Question 10</h4>
-      <h5>this is the first question??</h5>
+      <h6>I have many passions and interests.</h6>
 
       <select class="form-control form-control-sm" id="q10">
         <option value="">Select your answer</option>
@@ -162,9 +178,15 @@
       </select>
 
       <button type="button" class="btn btn-primary btn-lg" id="survey-submit">Submit</button>
-    </div>
+    
 
+    <hr/>
+    <a href="/">Home</a> | 
+    <a href="/api/friends" target="_blank">API Friends List</a> | 
+    <a href="https://github.com/pamelac08/FriendFinder" target="_blank">GitHub Repo</a>
+</div>
 
+    <!-- modal for closest match pop-up once API returns data-->
     <div class="modal" tabindex="-1" role="dialog" id="match-modal">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -175,7 +197,9 @@
               </button>
             </div>
             <div class="modal-body">
-              <img id="match-photo">
+                <div class="text-center">
+                    <img id="match-photo" alt="via.placeholder.com/450">
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -187,59 +211,60 @@
 
 
 <script>
-$(document).ready(function() {   
-    $("#survey-submit").on("click", function (event) {
-        event.preventDefault();
-       
-        var score1 = parseInt($("#q1 option:selected").val());
-        var score2 = parseInt($("#q2 option:selected").val()); 
-        var score3 = parseInt($("#q3 option:selected").val());
-        var score4 = parseInt($("#q4 option:selected").val());
-        var score5 = parseInt($("#q5 option:selected").val());
-        var score6 = parseInt($("#q6 option:selected").val());
-        var score7 = parseInt($("#q7 option:selected").val());
-        var score8 = parseInt($("#q8 option:selected").val());
-        var score9 = parseInt($("#q9 option:selected").val());
-        var score10 = parseInt($("#q10 option:selected").val());
+    $(document).ready(function() {   
 
-        var totalScore = [score1, score2, score3, score4, score5, score6, score7, score8, score9, score10];
-            // console.log(totalScore);
-
-        var newUser = {
-          name: $("#name").val(),
-          photo: $("#photo").val().trim(),
-          scores: totalScore
-        };
-            // console.log(newUser);
+        // when user clicks submit: the data inputs will be read and sent to the server via the post request and the input fields will be cleared
+        $("#survey-submit").on("click", function (event) {
+            event.preventDefault();
         
-        $("#name").val("");
-        $("#photo").val(""),
-        $("#q1").val("");
-        $("#q2").val("");
-        $("#q3").val("");
-        $("#q4").val("");
-        $("#q5").val("");
-        $("#q6").val("");
-        $("#q7").val("");
-        $("#q8").val("");
-        $("#q9").val("");
-        $("#q10").val("");
+            var score1 = parseInt($("#q1 option:selected").val());
+            var score2 = parseInt($("#q2 option:selected").val()); 
+            var score3 = parseInt($("#q3 option:selected").val());
+            var score4 = parseInt($("#q4 option:selected").val());
+            var score5 = parseInt($("#q5 option:selected").val());
+            var score6 = parseInt($("#q6 option:selected").val());
+            var score7 = parseInt($("#q7 option:selected").val());
+            var score8 = parseInt($("#q8 option:selected").val());
+            var score9 = parseInt($("#q9 option:selected").val());
+            var score10 = parseInt($("#q10 option:selected").val());
 
-        $.post("/api/friends", newUser)
+            var totalScore = [score1, score2, score3, score4, score5, score6, score7, score8, score9, score10];
 
-            .then(function (data) {
-                console.log("response: ", JSON.stringify(data));
+            var newUser = {
+            name: $("#name").val(),
+            photo: $("#photo").val().trim(),
+            scores: totalScore
+            };
+            
+            window.location.hash = "header";
+            $("#name").val("");
+            $("#photo").val(""),
+            $("#q1").val("");
+            $("#q2").val("");
+            $("#q3").val("");
+            $("#q4").val("");
+            $("#q5").val("");
+            $("#q6").val("");
+            $("#q7").val("");
+            $("#q8").val("");
+            $("#q9").val("");
+            $("#q10").val("");
 
-                $("#match-name").html(data.matchName);
-                $("#match-photo").attr("src", data.matchImage);
-                
-                // console.log("data.matchName", data.matchName);
+            $.post("/api/friends", newUser)
 
-      			$("#match-modal").modal("show");
+                .then(function (data) {
+                    // console.log("response: ", JSON.stringify(data));
 
-            });
+                    $("#match-name").html(data.matchName);
+                    $("#match-photo").attr("src", data.matchImage);
+                    
+                    // console.log("data.matchName", data.matchName);
+
+                    $("#match-modal").modal("show");
+
+                });
+        });
     });
-});
 
 </script>
 
